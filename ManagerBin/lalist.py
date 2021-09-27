@@ -5,7 +5,9 @@ import shutil
 # userBinDir = os.path.split(os.path.realpath('__file__'))[0]
 # userBinDir = os.path.abspath(userBinDir)
 
-binDir = r"F:\user\bin"
+import laGlobal
+
+binDir = laGlobal.binDir
 
 
 
@@ -21,5 +23,7 @@ if __name__ == "__main__":
 			eachList = eachLine.split()
 			if len(eachList) == 0:
 				continue
+			eachList = eachLine.split('\n')
+			eachList = eachList[0].split('\t')
 			print(eachList[0].ljust(25) + eachList[1])
 
