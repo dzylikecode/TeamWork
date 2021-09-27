@@ -5,8 +5,10 @@ import shutil
 # userBinDir = os.path.split(os.path.realpath('__file__'))[0]
 # userBinDir = os.path.abspath(userBinDir)
 
-binDir = r"F:\user\bin"
-pythonPath = r"D:\Anaconda3\envs\SystemEnv"
+import laGlobal
+
+binDir = laGlobal.binDir
+pythonPath = laGlobal.pythonPath
 
 
 def IsExistInRegister(fileName, exeDirNameExt):
@@ -15,6 +17,8 @@ def IsExistInRegister(fileName, exeDirNameExt):
 			splitLine = line.split() #分割字符串
 			if len(splitLine) == 0:
 				continue
+			splitLine = line.split('\n')
+			splitLine = splitLine[0].split('\t') 
 			sourceWorkHub = splitLine[1]
 			if sourceWorkHub == exeDirNameExt:
 				aliasName = splitLine[0]
@@ -72,7 +76,7 @@ if __name__ == "__main__":
 			bReplace = input()
 		if bReplace == "n":
 			print("install interrupt")
-			exit(1)
+			exit(0)
 
 	
 	#编写相应的快捷方式
@@ -101,7 +105,7 @@ if __name__ == "__main__":
 	#注册信息
 	if not bExit:
 		with open(exeReisterTabletFullName, 'a') as exeReisterTablet:
-			exeReisterTablet.write(exeName+"        "+exeDirNameExt + '\n')
+			exeReisterTablet.write(exeName+"\t"+exeDirNameExt + '\n')
 
 
 

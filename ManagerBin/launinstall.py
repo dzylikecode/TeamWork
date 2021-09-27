@@ -1,11 +1,12 @@
 import sys
 import os
-import shutil
 
 # userBinDir = os.path.split(os.path.realpath('__file__'))[0]
 # userBinDir = os.path.abspath(userBinDir)
 
-binDir = r"F:\user\bin"
+import laGlobal
+
+binDir = laGlobal.binDir
 
 
 
@@ -35,6 +36,8 @@ if __name__ == "__main__":
 				splitLine = wline.split()		#wline有\n
 				if len(splitLine) == 0:			#splitLine没有\n
 					continue
+				splitLine = wline.split('\n')
+				splitLine = splitLine[0].split('\t')
 				batName = splitLine[0]
 				sourceWorkHub = splitLine[1]
 				(srcDir, srcNameExt) = os.path.split(sourceWorkHub)
