@@ -87,13 +87,13 @@ if __name__ == "__main__":
 		with open(destDirNameExt, 'w') as batFile:
 			batFile.write("@echo off\n")
 			batFile.write(r"set pythonPath={}".format(pythonPath)+"\n")
-			batFile.write(r"call %pythonPath%\python.exe {} %*".format(exeDirNameExt) + "\n")
+			batFile.write(r'call "%pythonPath%\python.exe" "{}" %*'.format(exeDirNameExt) + "\n")
 		print("install successfully")
 	
 	if ".exe" == exeExt:
 		with open(destDirNameExt, 'w') as batFile:
 			batFile.write("@echo off\n")
-			batFile.write(r"call {} %*".format(exeDirNameExt) + "\n")
+			batFile.write(r'call "{}" %*'.format(exeDirNameExt) + "\n")
 		print("install successfully")
 
 
