@@ -1,2 +1,2 @@
-binDir = r"F:\user\bin"
-pythonPath = r"D:\Anaconda3\envs\SystemEnv"
+binDir = r"C:\Mark\bin"
+pythonPath = r"C:\Windows"
