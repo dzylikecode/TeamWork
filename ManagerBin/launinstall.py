@@ -63,16 +63,27 @@ if __name__ == "__main__":
 	if bExit and bRm:
 		batNameExt = batName + ".bat"
 		batDirNameExt = os.path.join(binDir,batNameExt)
-		os.remove(batDirNameExt)
-		if os.path.isfile(batDirNameExt):  #存在表明失败
+		#避免异常导致文件未被写入
+		try:
+			os.remove(batDirNameExt)
+			if os.path.isfile(batDirNameExt):  #存在表明失败
+				print("Remove failed")
+				with open(registerTabletDirNameExt, 'a') as aF:
+					aF.write(msg)
+				print(msg)
+				print("restore register tablet")
+			else:
+				print(msg)
+				print("Remove successfully")
+		except:
 			print("Remove failed")
 			with open(registerTabletDirNameExt, 'a') as aF:
 				aF.write(msg)
 			print(msg)
 			print("restore register tablet")
-		else:
-			print(msg)
-			print("Remove successfully")
+		
+	else:
+		print(exeName + " not exists")
 
 	
 
