@@ -36,28 +36,28 @@ if __name__ == "__main__":
 				splitLine = wline.split()		#wline有\n
 				if len(splitLine) == 0:			#splitLine没有\n
 					continue
-				splitLine = wline.split('\n')
-				splitLine = splitLine[0].split('\t')
-				batName = splitLine[0]
-				sourceWorkHub = splitLine[1]
-				(srcDir, srcNameExt) = os.path.split(sourceWorkHub)
-				(srcName, srcExt) = os.path.splitext(srcNameExt)
-				if exeName == batName or exeName == srcName:
-					bExit = True
-					msg = wline
-					print(msg)
-					print("Do you want to uninstall it [y/n]?")
-					bUninstall = input()
-					while bUninstall != "n" and bUninstall != "y":
+				if not bExit:
+					splitLine = wline.split('\n')
+					splitLine = splitLine[0].split('\t')
+					batName = splitLine[0]
+					sourceWorkHub = splitLine[1]
+					(srcDir, srcNameExt) = os.path.split(sourceWorkHub)
+					(srcName, srcExt) = os.path.splitext(srcNameExt)
+					if exeName == batName or exeName == srcName:
+						bExit = True
+						msg = wline
+						print(msg)
 						print("Do you want to uninstall it [y/n]?")
 						bUninstall = input()
-					if bUninstall == "n":
-						print("uninstall interrupt")
-					else:
-						print("remove from register tablet")
-						bRm = True
-						continue
-				
+						while bUninstall != "n" and bUninstall != "y":
+							print("Do you want to uninstall it [y/n]?")
+							bUninstall = input()
+						if bUninstall == "n":
+							print("uninstall interrupt")
+						else:
+							print("remove from register tablet")
+							bRm = True
+							continue
 				wF.write(wline)
 					
 	if bExit and bRm:
@@ -75,6 +75,8 @@ if __name__ == "__main__":
 			else:
 				print(msg)
 				print("Remove successfully")
+		except FileNotFoundError:
+			print("it had been removed before")
 		except:
 			print("Remove failed")
 			with open(registerTabletDirNameExt, 'a') as aF:
