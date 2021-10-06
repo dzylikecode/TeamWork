@@ -87,11 +87,12 @@ if __name__ == "__main__":
 	# 	else:
 	# 		print("move successfully")
 
+	bsuccess = False
 	if ".bat" == exeExt:
 		with open(destDirNameExt, 'w') as batFile:
 			batFile.write("@echo off\n")
 			batFile.write(r'call "{}" %*'.format(exeDirNameExt) + "\n")
-		print(exeNameExt + " install successfully")
+		bsuccess = True
 
 
 	if ".py" == exeExt:
@@ -99,20 +100,26 @@ if __name__ == "__main__":
 			batFile.write("@echo off\n")
 			batFile.write(r"set pythonPath={}".format(pythonPath)+"\n")
 			batFile.write(r'call "%pythonPath%\python.exe" "{}" %*'.format(exeDirNameExt) + "\n")
-		print(exeNameExt + " install successfully")
+		bsuccess = True
 	
 	if ".exe" == exeExt:
 		with open(destDirNameExt, 'w') as batFile:
 			batFile.write("@echo off\n")
 			batFile.write(r'call "{}" %*'.format(exeDirNameExt) + "\n")
-		print(exeNameExt + " install successfully")
+		bsuccess = True
 
 
 
 	#注册信息
-	if not bExit:
+	if not bExit and bsuccess:
 		with open(exeReisterTabletFullName, 'a') as exeReisterTablet:
 			exeReisterTablet.write(exeName+"\t"+exeDirNameExt + '\n')
+	
+	if bsuccess:
+		print(exeNameExt + " install successfully")
+	else:
+		print(exeNameExt + " install failed")
+	
 
 
 
