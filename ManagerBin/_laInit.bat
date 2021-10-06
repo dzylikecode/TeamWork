@@ -1,5 +1,6 @@
 @echo off
-call "C:\Users\14949\AppData\Local\Programs\Python\Python39\python.exe" "lainstall.py" "lainstall.py"
+set pythonPath="D:\Python"
+call "%pythonPath%\python.exe" "lainstall.py" "lainstall.py"
 call "lainstall.py" "launinstall.py"
 call "lainstall.py" "lalist.py"
 call "lainstall.py" "larename.py"
