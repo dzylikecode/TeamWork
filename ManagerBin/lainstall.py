@@ -80,11 +80,19 @@ if __name__ == "__main__":
 
 	
 	#编写相应的快捷方式
+	# 移动过去，注册的信息就稍微有点问题，暂时是使用快捷方式吧
+	# if ".bat" == exeExt:
+	# 	if not shutil.move(exeDirNameExt, destDirNameExt):
+	# 		print("Could not move " + exeDirNameExt)
+	# 	else:
+	# 		print("move successfully")
+
+	bsuccess = False
 	if ".bat" == exeExt:
-		if not shutil.move(exeDirNameExt, destDirNameExt):
-			print("Could not move " + exeDirNameExt)
-		else:
-			print("move successfully")
+		with open(destDirNameExt, 'w') as batFile:
+			batFile.write("@echo off\n")
+			batFile.write(r'call "{}" %*'.format(exeDirNameExt) + "\n")
+		bsuccess = True
 
 
 	if ".py" == exeExt:
@@ -92,20 +100,26 @@ if __name__ == "__main__":
 			batFile.write("@echo off\n")
 			batFile.write(r"set pythonPath={}".format(pythonPath)+"\n")
 			batFile.write(r'call "%pythonPath%\python.exe" "{}" %*'.format(exeDirNameExt) + "\n")
-		print("install successfully")
+		bsuccess = True
 	
 	if ".exe" == exeExt:
 		with open(destDirNameExt, 'w') as batFile:
 			batFile.write("@echo off\n")
 			batFile.write(r'call "{}" %*'.format(exeDirNameExt) + "\n")
-		print("install successfully")
+		bsuccess = True
 
 
 
 	#注册信息
-	if not bExit:
+	if not bExit and bsuccess:
 		with open(exeReisterTabletFullName, 'a') as exeReisterTablet:
 			exeReisterTablet.write(exeName+"\t"+exeDirNameExt + '\n')
+	
+	if bsuccess:
+		print(exeNameExt + " install successfully")
+	else:
+		print(exeNameExt + " install failed")
+	
 
 
 
