@@ -1,5 +1,5 @@
 @echo off
-set pythonPath="C:\Users\14949\AppData\Local\Programs\Python\Python39"
+set pythonPath="D:\Anaconda3\envs\SystemEnv"
 call "%pythonPath%\python.exe" "lainstall.py" "lainstall.py"
 call "lainstall.py" "launinstall.py"
 call "lainstall.py" "lalist.py"
