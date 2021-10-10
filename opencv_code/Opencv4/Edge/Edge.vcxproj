@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="edge.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{94579b83-eb34-4bce-9940-9506bd4eeb79}</ProjectGuid>
-    <RootNamespace>test</RootNamespace>
+    <ProjectGuid>{3637e264-10a6-4cd7-8278-af76d05c9d05}</ProjectGuid>
+    <RootNamespace>Edge</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

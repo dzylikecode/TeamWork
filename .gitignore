@@ -1,3 +1,6 @@
 .vscode/
 ManagerBin/__pycache__/
 /opencv_code/Opencv4/.vs/
+/.vs
+/opencv_code/Opencv4/x64/Debug
+/opencv_code/Opencv4/*/x64/Debug

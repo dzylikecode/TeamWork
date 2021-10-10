@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="kmeans.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{94579b83-eb34-4bce-9940-9506bd4eeb79}</ProjectGuid>
-    <RootNamespace>test</RootNamespace>
+    <ProjectGuid>{e97e5349-e6b1-47ee-b49a-c54967d35800}</ProjectGuid>
+    <RootNamespace>kmeans</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
