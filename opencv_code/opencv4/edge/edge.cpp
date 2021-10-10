@@ -4,7 +4,6 @@
 #include "opencv2/highgui.hpp"
 
 #include <stdio.h>
-
 using namespace cv;
 using namespace std;
 

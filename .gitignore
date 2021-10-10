@@ -2,5 +2,8 @@
 ManagerBin/__pycache__/
 /opencv_code/Opencv4/.vs/
 /.vs
-/opencv_code/Opencv4/x64/Debug
-/opencv_code/Opencv4/*/x64/Debug
+/opencv_code/opencv4/x64/Debug
+/opencv_code/opencv4/*/x64/Debug
+/opencv_code/opencv4/*/Debug
+/opencv_code/opencv4/PropertySheet.props
+/opencv_code/opencv4/Debug
