@@ -4,18 +4,26 @@
   <PropertyGroup Label="UserMacros">
     <opencv_inc>F:\user\La_Library\Opencv\opencv\build\include</opencv_inc>
     <opencv_lib>F:\user\La_Library\Opencv\opencv\build\x64\vc15\lib</opencv_lib>
+    <opencv_dll>opencv_world453d.lib</opencv_dll>
   </PropertyGroup>
   <PropertyGroup>
     <IncludePath>$(opencv_inc);$(IncludePath)</IncludePath>
     <LibraryPath>$(opencv_lib);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
-  <ItemDefinitionGroup />
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>$(opencv_dll);%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <BuildMacro Include="opencv_inc">
       <Value>$(opencv_inc)</Value>
     </BuildMacro>
     <BuildMacro Include="opencv_lib">
       <Value>$(opencv_lib)</Value>
+    </BuildMacro>
+    <BuildMacro Include="opencv_dll">
+      <Value>$(opencv_dll)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>

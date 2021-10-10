@@ -1,7 +1,6 @@
 #include <opencv2\opencv.hpp>  //加载OpenCV 4.0头文件
 #include <iostream>
 
-#pragma comment(lib, "opencv_world453d.lib")
 
 using namespace std;
 using namespace cv;  //opencv的命名空间
